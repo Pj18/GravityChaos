@@ -2,29 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneController : MonoBehaviour
+public class RepeatingBackground : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
+
+    private BoxCollider2D groundCollider;
     private float groundHorizontalLength;
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, 0);
-        groundHorizontalLength =  36.33f;
+        groundCollider = GetComponent<BoxCollider2D>();
+        groundHorizontalLength = 2 * groundCollider.size.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < -groundHorizontalLength)
+        if(transform.position.x<-groundHorizontalLength)
         {
             RepositionBackground();
-        }
-
-        if (GameController.instance.gameOver)
-        {
-            rb2d.velocity = Vector2.zero;
         }
     }
 
