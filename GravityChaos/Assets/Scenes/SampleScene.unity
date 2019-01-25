@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 161399245}
   - component: {fileID: 161399250}
   m_Layer: 0
-  m_Name: FOX_RUN_0
+  m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161399244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.12, y: -3.16, z: 0}
+  m_LocalPosition: {x: -4, y: -3.16, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3049,6 +3049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1518528249}
   - component: {fileID: 1518528250}
+  - component: {fileID: 1518528251}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3084,6 +3085,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: 0
   scrollSpeed: -3.5
+--- !u!114 &1518528251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518528248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d891f525cd1daf419a659f875ffa156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoolSize: 5
+  thornsobject: {fileID: 5445672961922655769, guid: 21637756146ecad49a1164115252ea54,
+    type: 3}
+  ghostobject: {fileID: 8214817561307484474, guid: f577fa471ad2b8d42bde2bce8ac7bcd5,
+    type: 3}
+  scorecolliderobject: {fileID: 8614916233924419598, guid: c12f8114ac7ea93478c50e7970d4c3b3,
+    type: 3}
+  spawnRate: 4
+  thornMax: 2.5
+  thornMin: -2.35
 --- !u!1 &1582688766
 GameObject:
   m_ObjectHideFlags: 0

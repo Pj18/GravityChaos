@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public bool gameOver = false;
     public float scrollSpeed = -3.5f;
+    private int score = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,5 +26,12 @@ public class GameController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Scored()
+    {
+        if (gameOver)
+            return;
+        score++;
     }
 }
