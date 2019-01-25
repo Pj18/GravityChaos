@@ -47,5 +47,25 @@ public class PlayerScript : MonoBehaviour
                 direc = false;
             }
         }
+        if(isDead)
+        {
+            transform.eulerAngles=new Vector3(0,0,0);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Debug.Log(collision.gameObject.name);
+        if(collision.gameObject.tag== "ghost"||collision.gameObject.tag=="thorns")
+        {
+            isDead = true;
+            anim.SetTrigger("Dead");
+            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.392282f, 0.3198395f);
+            Physics2D.gravity = new Vector2(0, -12f);
+            transform.eulerAngles = new Vector2(0, 0);
+            rb2d.velocity = Vector2.zero;
+            rb2d.velocity = new Vector2(-2.5f, 2.5f);
+            GameController.instance.PlayerDied();
+        }
     }
 }

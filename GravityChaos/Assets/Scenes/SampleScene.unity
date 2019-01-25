@@ -3104,7 +3104,7 @@ MonoBehaviour:
     type: 3}
   scorecolliderobject: {fileID: 8614916233924419598, guid: c12f8114ac7ea93478c50e7970d4c3b3,
     type: 3}
-  spawnRate: 4
+  spawnRate: 3
   thornMax: 2.5
   thornMin: -2.35
 --- !u!1 &1582688766

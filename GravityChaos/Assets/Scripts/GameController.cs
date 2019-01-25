@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 
     public static GameController instance;
     public bool gameOver = false;
-    public float scrollSpeed = -3.5f;
+    public float scrollSpeed = -5.5f;
     private int score = 0;
     // Start is called before the first frame update
     void Awake()
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(score);
     }
 
     public void Scored()
@@ -33,5 +33,10 @@ public class GameController : MonoBehaviour
         if (gameOver)
             return;
         score++;
+    }
+
+    public void PlayerDied()
+    {
+        gameOver = true;
     }
 }
