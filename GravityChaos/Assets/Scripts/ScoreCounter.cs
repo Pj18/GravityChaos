@@ -8,7 +8,7 @@ public class ScoreCounter : MonoBehaviour
     {
         if(collision.gameObject.name=="Fox")
         {
-            GameController.instance.Scored();
+            GameController.instance.Scored(1);
         }
     }
 }

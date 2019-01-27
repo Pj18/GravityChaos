@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
 
@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public bool gameOver = false;
     public float scrollSpeed = -5.5f;
     private int score = 0;
+    public Text Scoretext;
+    public GameObject Gameovertext;
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,15 +30,17 @@ public class GameController : MonoBehaviour
         Debug.Log(score);
     }
 
-    public void Scored()
+    public void Scored(int s)
     {
         if (gameOver)
             return;
-        score++;
+        score+=s;
+        Scoretext.text = "Score : " + score;
     }
 
     public void PlayerDied()
     {
         gameOver = true;
+        Gameovertext.SetActive(true);
     }
 }
