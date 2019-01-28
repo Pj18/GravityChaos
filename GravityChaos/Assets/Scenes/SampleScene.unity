@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -44, y: -22}
+  m_AnchoredPosition: {x: -2, y: -68}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &126043694
@@ -171,10 +171,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f6d2da41449b7334d8798fde9bf3db17, type: 3}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -282,8 +282,8 @@ GameObject:
   - component: {fileID: 161399248}
   - component: {fileID: 161399247}
   - component: {fileID: 161399246}
-  - component: {fileID: 161399245}
   - component: {fileID: 161399250}
+  - component: {fileID: 161399245}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -291,8 +291,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &161399245
-BoxCollider2D:
+--- !u!60 &161399245
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -304,7 +304,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10959858, y: 0.10330349}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.35, y: 0.5}
@@ -314,9 +314,29 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1963402, y: 1.3155409}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.44, y: -0.26}
+      - {x: 0.17999999, y: 0.17999999}
+      - {x: 0.44, y: 0.22}
+      - {x: 0.4242231, y: 0.59394413}
+      - {x: 0.24000007, y: 0.80055785}
+      - {x: -0.06, y: 0.74}
+      - {x: -0.14, y: 0.7}
+      - {x: -0.14844614, y: 0.6145024}
+      - {x: -0.7, y: 0.52}
+      - {x: -0.7, y: 0.42}
+      - {x: -0.63322735, y: 0.123665124}
+      - {x: -0.65999997, y: -0.12}
+      - {x: -0.71450186, y: -0.3823906}
+      - {x: -0.55816686, y: -0.47266936}
+      - {x: -0.32239076, y: -0.48167363}
+      - {x: -0.049721394, y: -0.5917938}
+      - {x: 0.34900424, y: -0.5968928}
+      - {x: 0.29999998, y: -0.5}
+      - {x: 0.36733028, y: -0.58111584}
+      - {x: 0.5284462, y: -0.61800873}
+      - {x: 0.48, y: -0.29999998}
 --- !u!50 &161399246
 Rigidbody2D:
   serializedVersion: 4
@@ -337,7 +357,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &161399247
 Animator:
   serializedVersion: 3
@@ -1113,7 +1133,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f6d2da41449b7334d8798fde9bf3db17, type: 3}
-    m_FontSize: 25
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3390,6 +3410,7 @@ GameObject:
   - component: {fileID: 1518528249}
   - component: {fileID: 1518528250}
   - component: {fileID: 1518528251}
+  - component: {fileID: 1518528252}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3451,6 +3472,102 @@ MonoBehaviour:
   spawnRate: 3
   thornMax: 2.5
   thornMin: -2.35
+--- !u!82 &1518528252
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518528248}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e58d0a3602884c1468741850272d7270, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.296
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1582688766
 GameObject:
   m_ObjectHideFlags: 0

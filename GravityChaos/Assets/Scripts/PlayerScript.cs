@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     private Animator anim;
     private bool isDead = false;
     private bool direc = false;
+    
     public float force = 10f;
     public float smooth = 5.0f;
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class PlayerScript : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -60,7 +62,8 @@ public class PlayerScript : MonoBehaviour
         {
             isDead = true;
             anim.SetTrigger("Dead");
-            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.392282f, 0.3198395f);
+            
+            //gameObject.GetComponent<PolygonCollider2D>().size = new Vector2(1.392282f, 0.3198395f);
             Physics2D.gravity = new Vector2(0, -12f);
             transform.eulerAngles = new Vector2(0, 0);
             rb2d.velocity = Vector2.zero;
