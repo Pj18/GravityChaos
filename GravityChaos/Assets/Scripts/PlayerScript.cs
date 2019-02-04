@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isDead&& Input.GetMouseButtonDown(0))
+        if(!isDead&& Input.GetMouseButtonDown(0)&&GameController.instance.gamestarted)
         {
             rb2d.velocity = Vector2.zero;
             if(!direc)
