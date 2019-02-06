@@ -67,7 +67,7 @@ public class PlayerScript : MonoBehaviour
             Physics2D.gravity = new Vector2(0, -12f);
             transform.eulerAngles = new Vector2(0, 0);
             rb2d.velocity = Vector2.zero;
-            rb2d.velocity = new Vector2(-2.5f, 2.5f);
+            rb2d.velocity = new Vector2(-3.5f, 3.5f);
             GameController.instance.PlayerDied();
         }
     }

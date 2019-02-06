@@ -19,6 +19,7 @@ public class ObstaclesCreator : MonoBehaviour
     private GameObject[] coinarray;
     private Vector2 objectPoolPosition = new Vector2(-25f, -15f);
     private float timeSinceLastSpawned;
+    private float totaltime = 0;
     private float spawnXPosition = 8f;
     private int currentThorn=0;
     private int currentGhost = 0;
@@ -58,14 +59,23 @@ public class ObstaclesCreator : MonoBehaviour
     void Update()
     {
         timeSinceLastSpawned += Time.deltaTime;
+        totaltime += Time.deltaTime;
+        if(GameController.instance.gameOver==false&&totaltime>=5.0f)
+        {
+            totaltime = 0;
+            spawnRate -= 0.15f;
+            GameController.instance.scrollSpeed -= 0.15f;
+        }
         if(GameController.instance.gameOver==false&&timeSinceLastSpawned>=spawnRate)
         {
             timeSinceLastSpawned = 0;
             int selector = Random.Range(1, 3);
-            if(selector==1)
+            int xx = Random.Range(-2, 2);
+            if (selector==1)
             {
+                
                 scorecolliderarray[currentscorecollider].transform.position = new Vector2(spawnXPosition+2, 0.0f);
-                coinarray[currentcoin].transform.position = new Vector2(spawnXPosition + 3, Random.Range(-3.0f, 3.0f));
+                coinarray[currentcoin].transform.position = new Vector2(spawnXPosition + 3+xx, Random.Range(-3.0f, 3.0f));
                 ghostarray[currentGhost].transform.position = new Vector2(spawnXPosition, 0.0f);
                 currentGhost = (currentGhost + 1) % PoolSize;
                 currentscorecollider = (currentscorecollider + 1) % PoolSize;
@@ -73,7 +83,7 @@ public class ObstaclesCreator : MonoBehaviour
             }
             else
             {
-                coinarray[currentcoin].transform.position = new Vector2(spawnXPosition + 3, Random.Range(-3.0f, 3.0f));
+                coinarray[currentcoin].transform.position = new Vector2(spawnXPosition + 3+xx, Random.Range(-3.0f, 3.0f));
                 scorecolliderarray[currentscorecollider].transform.position = new Vector2(spawnXPosition+2, 0.0f);
                 thornarray[currentThorn].transform.position = new Vector2(spawnXPosition, Random.Range(thornMin, thornMax));
                 currentThorn = (currentThorn + 1) % PoolSize;
@@ -83,4 +93,6 @@ public class ObstaclesCreator : MonoBehaviour
         }
         
     }
+
+    
 }
